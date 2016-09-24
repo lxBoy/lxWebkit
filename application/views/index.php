@@ -1,3 +1,6 @@
+<?php
+    $cate_id = $this -> input -> get('cateId');
+?>
 <!doctype html>
 <html lang="en">
 <head>
@@ -19,11 +22,60 @@
 </head>
 <body>
     <?php include 'header.php';?>
-    <div id="banner"></div>
-    <div id="works"></div>
+    <div id="banner">
+        <div class="wrapper">
+            <div class="banner-left">
+                <h2 class="banner-title">Creative Ideas Live Here</h2>
+                <p class="banner-content">Aliquam suscipit vel nulla quis eleifend.
+                    Maecenas vitae tristique ante. Sed sit amet vehicula libero.</p>
+            </div>
+            <div class="banner-right">
+                <img src="img/tv.png" alt="" class="banner-tv">
+            </div>
+            <div class="line"></div>
+        </div>
+    </div>
+    <div id="works">
+        <div class="wrapper">
+            <div class="work-top">
+                <h3>Latest Works</h3>
+                <ul class="blog-cate">
+                    <li><a href="javascript:;" class="active">All</a></li>
+                    <?php
+                        foreach($categories as $category){
+                    ?>
+                            <li><a href="javascript:;" data-id="<?php echo $category->cate_id;?>"><?php echo $category->cate_name;?></a></li>
+                    <?php
+                        }
+                    ?>
+                </ul>
+            </div>
+            <ul class="blog-list">
+                <?php
+                    foreach($blogs as $blog){
+                ?>
+                        <li class="blog third">
+                            <a href="welcome/view_blog?blogId=<?php echo $blog->blog_id;?>">
+                                <img src="<?php echo $blog->img;?>" alt="">
+                                <div class="blog-desc">
+                                    <p class="blog-title"><?php echo $blog->title;?></p>
+                                    <span class="blog-clicked"><?php echo $blog->clicked;?></span>
+                                </div>
+                                <div class="mask">
+                                    <h4 class="mask-title">PHOTO</h4>
+                                    <span class="mask-btn">VIEW PHOTO</span>
+                                </div>
+                            </a>
+                        </li>
+                <?php
+                    }
+                ?>
+            </ul>
+        </div>
+    </div>
     <div id="services"></div>
     <div id="meet"></div>
     <footer id="footer"></footer>
-<script src="js/require.js" data-main="js/index"></script>
+    <script src="js/require.js" data-main="js/index"></script>
 </body>
 </html>

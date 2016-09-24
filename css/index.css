@@ -1,0 +1,150 @@
+/*banner结束*/
+#banner{
+    padding: 2rem 0;
+    position: relative;
+}
+#banner .wrapper, #works .wrapper{
+    overflow: hidden;/*解决子元素浮动，父元素没有高 的问题*/
+}
+.banner-left{
+    /*position: absolute;*/
+    /*top: 126px;*/
+    float: left;
+    padding-top: 126px;
+    width: 46%;
+}
+.banner-left h2{
+    color: #575757;
+    font-family: 'PT Sans Narrow', sans-serif;
+    font-size: 3.5rem;
+}
+.banner-left p{
+    color: #8e8e8e;
+    font-size: 1.1rem;
+    line-height: 1.8rem;
+    width: 80%;
+    padding-right: 0.5rem;
+}
+.banner-right{
+    float: right;
+
+}
+.banner-right img{
+    display: block;
+    max-width: 100%;
+    height: auto;
+    /*width: 100%;*/
+}
+
+#banner .line{
+    width: 100%;
+    height: 1px;
+    background: #ccc;
+    margin-top: 417px;
+}
+@media(max-width: 480px){
+    #banner, .wrapper{
+        width: 100%;
+        /*margin-top: ;*/
+    }
+
+    .banner-left{
+        clear: both;
+        padding-top: 0;
+        padding-bottom: 10px;
+        width: 100%;
+    }
+    .banner-left p{
+        padding: 0.5rem 0.5rem;
+        margin: 0 auto;
+    }
+    #banner .line {
+        margin-top: 457px;
+    }
+}
+/*banner结束*/
+#works h3{
+    float: left;
+    color: #a2a3a3;
+    font-family: 'PT Sans Narrow', sans-serif;
+    font-size: 3rem;
+}
+#works .work-top{
+    overflow: hidden;
+    padding-top: 50px;
+}
+#works .blog-cate{
+    float: right;
+}
+#works .blog-cate li{
+    float: left;
+    margin-right: 20px;
+}
+#works .blog-cate a{
+    padding: 8px 15px;
+    text-decoration: none;
+    color: #279f7c;
+    font-size: 1.5em;
+    -webkit-transition: all 0.5s ease-in;
+    -moz-transition: all 0.5s ease-in;
+    -ms-transition: all 0.5s ease-in;
+    -o-transition: all 0.5s ease-in;
+    transition: all 0.5s ease-in;
+}
+#works .blog-cate a.active{
+    color: #fff;
+    background: #279f7c;
+    border-radius: 5px;
+}
+#works .blog-cate a:hover{
+    color: #fff;
+    background: #279f7c;
+    border-radius: 5px;
+
+}
+#works .blog{
+    float: left;
+    margin-right: 68px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    position: relative;
+    overflow: hidden;
+}
+#works .blog img{
+    width: 330px;
+    height: 241px;
+}
+#works .blog:nth-child(3n){
+    margin-right: 0;
+}
+#works .blog-desc{
+    overflow: hidden;
+}
+#works .blog .blog-title{
+    float: left;
+}
+#works .blog .blog-clicked{
+    float: right;
+}
+#works .blog .mask{
+    width: 330px;
+    height: 241px;
+    position: absolute;
+    top: 0;
+    /*left: -330px;*/
+    transform: translateX(-100%);
+    background: rgba(39, 159, 124, 0.6);
+    text-align: center;
+    transition: all 0.5s ease-in;
+}
+#works .blog:hover .mask{
+    transform: translateX(0);
+}
+#footer{
+    height: 500px;
+    background: #279f7c;
+    clear: both;
+}
+::-webkit-input-placeholder{
+    color: gray;
+}
